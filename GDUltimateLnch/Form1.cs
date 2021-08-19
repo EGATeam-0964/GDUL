@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GDUltimateLnch.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -107,8 +108,7 @@ namespace GDUltimateLnch
             }
             catch(Exception ex)
             {
-                File.WriteAllText(@"C:\GDUL\Logs\log.txt", "[" + DateTime.UtcNow + "] Вызвано исключение: " + ex.Message);
-                MessageBox.Show($"Что-то пошло не так.\nИнформация об исключении, которую стоит передать Creepy0964, занесена в логи.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                CrashReporter.ReportException(ex);
             }            
         }
 
@@ -120,8 +120,7 @@ namespace GDUltimateLnch
             }
             catch (Exception ex)
             {
-                File.WriteAllText(@"C:\GDUL\Logs\log.txt", "[" + DateTime.UtcNow + "] Вызвано исключение: " + ex.Message);
-                MessageBox.Show($"Что-то пошло не так.\nИнформация об исключении, которую стоит передать Creepy0964, занесена в логи.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                CrashReporter.ReportException(ex);
             }
         }
     }

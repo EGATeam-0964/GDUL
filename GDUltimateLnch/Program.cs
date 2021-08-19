@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GDUltimateLnch.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +15,16 @@ namespace GDUltimateLnch
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GDUL());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new GDUL());
+            }
+            catch (Exception ex)
+            {
+                CrashReporter.ReportException(ex);
+            }
         }
     }
 }
