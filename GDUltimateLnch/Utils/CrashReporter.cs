@@ -24,8 +24,12 @@ namespace GDUltimateLnch.Utils
         /// <returns>Log file path.</returns>
         public static string ReportException(Exception exception, bool shouldNotice = true)
         {
-            using (var client = new HttpClient())
-                client.PostAsync(ReportServerEndpoint, new StringContent(exception.StackTrace, Encoding.UTF8, "text/text"));
+            try
+            {
+                using (var client = new HttpClient())
+                    client.PostAsync(ReportServerEndpoint, new StringContent(exception.StackTrace, Encoding.UTF8, "text/text"));
+            }
+            catch { }
             string logFilePath = Path.GetTempFileName();
             File.AppendAllText(logFilePath, exception.StackTrace);
             if (shouldNotice)

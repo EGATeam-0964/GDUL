@@ -28,21 +28,10 @@ namespace GDUltimateLnch
         }
 
         public static void ShouldUpdate()
-        {       
-            if (!File.Exists(@"C:\GDUL\Temp\ver.txt")) return;
+        {
             try
             {
-                string serverVersion = File.ReadAllText(@"C:\GDUL\Temp\ver.txt");
-                if(serverVersion[5] > version[5])
-                {
-                    MessageBox.Show($"Вышло обновление! У вас всегда есть возможность обновиться через GitHub.", "Обновление", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-                    update = true;
-                }
-                else
-                {
-                    File.Delete(@"C:\GDUL\Temp\ver.txt");
-                    update = false;
-                }
+                UpdateSystem.CheckVersion();
             }
             catch(Exception ex)
             {
