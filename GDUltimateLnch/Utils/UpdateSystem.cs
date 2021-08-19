@@ -13,7 +13,7 @@ namespace GDUltimateLnch.Utils
     {
         private const string ServerVersionEndpoint = @"";
         private const string GithubReleasesUrl = @"";
-        public static readonly Version CurrentVersion = new Version("d0.0.2");
+        public static readonly Version CurrentVersion = new Version("0.0.2");
 
         /// <summary>
         /// Get the latest version on the server.

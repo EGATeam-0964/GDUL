@@ -27,11 +27,11 @@ namespace GDUltimateLnch.Utils
             try
             {
                 using (var client = new HttpClient())
-                    client.PostAsync(ReportServerEndpoint, new StringContent(exception.StackTrace, Encoding.UTF8, "text/text"));
+                    client.PostAsync(ReportServerEndpoint, new StringContent(exception.ToString(), Encoding.UTF8, "text/text"));
             }
             catch { }
             string logFilePath = Path.GetTempFileName();
-            File.AppendAllText(logFilePath, exception.StackTrace);
+            File.AppendAllText(logFilePath, exception.ToString());
             if (shouldNotice)
                 new Task(() => MessageBox.Show($"Что-то пошло не так.\nИнформация об исключении, которую стоит передать Creepy0964, занесена в логи. Путь к лог-файлу:\n\n{logFilePath}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly)).Start();
             return logFilePath;
