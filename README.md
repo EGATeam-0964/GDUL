@@ -6,3 +6,7 @@ There are two variants: portable version and installer. With portable you need t
 - Idea, design: PopDash
 - Code: Creepy0964
 - Great support from Eimaen
+
+## Used content
+- Geometry Dash v2.113 by RobTop
+- GD DLL Loader by HJFod
