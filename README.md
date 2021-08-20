@@ -5,7 +5,7 @@ There are two variants: portable version and installer. With portable you need t
 ## Developers
 - Idea, design: PopDash
 - Code, project host: Creepy0964
-- Great support from Eimaen
+- Great support from Eimaen & TobyAdd
 
 ## Used content
 - Geometry Dash v2.113 by RobTop
