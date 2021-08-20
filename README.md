@@ -1,5 +1,6 @@
 # GDUL
 [![DungeonCI](https://img.shields.io/static/v1?label=dungeonci&message=slave&color=red)](https://www.google.com/search?q=Van+Darkholme)
+[![Cookies](https://img.shields.io/static/v1?label=cookies&message=489723&color=green)](https://www.google.com/search?q=Cookies!)
 
 GD Ultimate Launcher - simple lightweight GD launcher with mods and PS support!
 ## Installation process
